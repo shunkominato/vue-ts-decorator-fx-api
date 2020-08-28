@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "esnext",
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "moduleResolution": "node",
+        "alwaysStrict": true,
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*" : ["./src/*"],
+            "@atoms/*" : ["./src/components/atoms/*"]
+        },
+        "types": [
+            "vue",
+            "jest",
+            "node",
+            "webpack",
+            "webpack-merge"
+        ],
+        "lib": [
+            "es2015",
+            "dom",
+            "dom.iterable",
+            "scripthost"
+        ]
+    },
+    "files": [
+        "./src/typings/shims-vue.d.ts",
+        "./src/typings/images.d.ts"
+    ],
+    "include": [
+        "build/*.ts",
+        "src/**/*.ts",
+        "src/**/*.vue"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
