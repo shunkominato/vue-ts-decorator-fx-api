@@ -3,23 +3,21 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
-export default Vue.extend({
-    name: 'VButton',
-    props: {
-        btnName: {
-            type: String,
-            required: true,
-        },
-        theme: {
-            type: String,
-            default: 'primary',
-            validator: (value: string): boolean =>
-                ['primary', 'secondary', 'success', 'danger', 'warning'].indexOf(value) !== -1,
-        },
-    },
+@Component({
+    name: 'CmkForm',
 })
+export default class VButton extends Vue {
+    @Prop({ type: String, required: true }) btnName: string
+    @Prop({
+        type: String,
+        default: 'primary',
+        validator: (value: string): boolean =>
+            ['primary', 'secondary', 'success', 'danger', 'warning'].indexOf(value) !== -1,
+    })
+    theme: string
+}
 </script>
 
 <style>
