@@ -6,20 +6,17 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
 import VButton from '@atoms/VButton.vue'
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
-export default Vue.extend({
+@Component({
     name: 'ApiFrameBody',
-    components: {
-        VButton,
-    },
-    methods: {
-        getBTC(): void {
-            this.$emit('getBTC')
-        },
-    },
 })
+export class ApiFrameBodyVue extends Vue {
+    getBTC(): void {
+        this.$emit('getBTC')
+    }
+}
 </script>
 
 <style scoped>
