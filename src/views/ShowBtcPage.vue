@@ -15,37 +15,33 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 import ApiFrame from '@organisms/ApiFrame.vue';
 import Heding from '@organisms/Heding.vue';
 
-export default Vue.extend({
+@Component({
   name: 'ShowBtcPage',
-  components: {
-    Heding,
-    ApiFrame,
-  },
-  computed: {
-    // getters call
-    // stores/gettersを呼ぶ
-    getBTCUSD(): string {
-      return this.$store.getters['stores/getBTCUSD'];
-    },
-    getBTCGBP(): string {
-      return this.$store.getters['stores/getBTCGBP'];
-    },
-    getBTCEUR(): string {
-      return this.$store.getters['stores/getBTCEUR'];
-    },
-  },
-  methods: {
-    getBTC(): void {
-      // actions dispatch
-      // stores/actions.tsのgetBTCを呼ぶ
-      this.$store.dispatch('stores/getBTC');
-    },
-  },
-});
+  components: { ApiFrame, Heding },
+})
+export default class ShowBtcPage extends Vue {
+  // getters call
+  // stores/gettersを呼ぶ
+  getBTCUSD(): string {
+    return this.$store.getters['stores/getBTCUSD'];
+  }
+  getBTCGBP(): string {
+    return this.$store.getters['stores/getBTCGBP'];
+  }
+  getBTCEUR(): string {
+    return this.$store.getters['stores/getBTCEUR'];
+  }
+
+  getBTC(): void {
+    // actions dispatch
+    // stores/actions.tsのgetBTCを呼ぶ
+    this.$store.dispatch('stores/getBTC');
+  }
+}
 </script>
 
 <style scoped>
