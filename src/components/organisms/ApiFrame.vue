@@ -15,32 +15,22 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 import FrameHeader from '@molecules/FrameHeader.vue';
 import ApiFrameBody from '@molecules/ApiFrameBody.vue';
 
-export default Vue.extend({
+@Component({
   name: 'ApiFrame',
-  components: {
-    FrameHeader,
-    ApiFrameBody,
-  },
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    content: {
-      type: String,
-      required: true,
-    },
-  },
-  methods: {
-    getBTC(): void {
-      this.$emit('getBTC');
-    },
-  },
-});
+  components: { FrameHeader, ApiFrameBody },
+})
+export default class ApiFrame extends Vue {
+  @Prop({ type: String, required: true }) title: string;
+  @Prop({ type: String, required: true }) content: string;
+
+  getBTC(): void {
+    this.$emit('getBTC');
+  }
+}
 </script>
 
 <style scoped></style>

@@ -15,27 +15,18 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 import FrameHeader from '@molecules/FrameHeader.vue';
 import MenuFrameBody from '@molecules/MenuFrameBody.vue';
 
-export default Vue.extend({
+@Component({
   name: 'MenuFrame',
-  components: {
-    FrameHeader,
-    MenuFrameBody,
-  },
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    content: {
-      type: String,
-      required: true,
-    },
-  },
-});
+  components: { FrameHeader, MenuFrameBody },
+})
+export default class MenuFrame extends Vue {
+  @Prop({ type: String, required: true }) title: string;
+  @Prop({ type: String, required: true }) content: string;
+}
 </script>
 
 <style>

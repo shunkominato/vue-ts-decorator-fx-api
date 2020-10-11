@@ -9,11 +9,12 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 
-export default Vue.extend({
+@Component({
   name: 'Heding',
-});
+})
+export default class Heding extends Vue {}
 </script>
 
 <style></style>
