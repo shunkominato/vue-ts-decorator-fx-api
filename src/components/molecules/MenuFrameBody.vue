@@ -6,20 +6,18 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 import VButton from '@atoms/VButton.vue';
 
-export default Vue.extend({
+@Component({
   name: 'MenuFrameBody',
-  components: {
-    VButton,
-  },
-  methods: {
-    rooter(): void {
-      this.$router.push('/ShowBtcPage');
-    },
-  },
-});
+  components: { VButton },
+})
+export default class MenuFrameBody extends Vue {
+  rooter(): void {
+    this.$router.push('/ShowBtcPage');
+  }
+}
 </script>
 
 <style scoped>

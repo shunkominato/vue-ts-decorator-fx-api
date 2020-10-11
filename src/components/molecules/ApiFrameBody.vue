@@ -11,8 +11,9 @@ import { Vue, Component } from 'vue-property-decorator';
 
 @Component({
   name: 'ApiFrameBody',
+  components: { VButton },
 })
-export class ApiFrameBodyVue extends Vue {
+export default class ApiFrameBody extends Vue {
   getBTC(): void {
     this.$emit('getBTC');
   }
