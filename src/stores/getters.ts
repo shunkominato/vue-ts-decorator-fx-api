@@ -1,8 +1,8 @@
 // getters
 export default {
-    getBTCUSD: (state: State): string => state.BTCUSD,
+  getBTCUSD: (state: State): string => state.BTCUSD,
 
-    getBTCGBP: (state: State): string => state.BTCGBP,
+  getBTCGBP: (state: State): string => state.BTCGBP,
 
-    getBTCEUR: (state: State): string => state.BTCEUR,
-}
+  getBTCEUR: (state: State): string => state.BTCEUR,
+};

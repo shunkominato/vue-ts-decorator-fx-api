@@ -1,19 +1,19 @@
 <template>
-    <div>
-        <slot></slot>
-    </div>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 
 export default Vue.extend({
-    name: 'FrameHeader',
-})
+  name: 'FrameHeader',
+});
 </script>
 
 <style scoped>
 .execute-btn {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 </style>
