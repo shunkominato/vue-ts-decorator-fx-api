@@ -1,4 +1,4 @@
-export interface Fx {
+export interface FxRates {
   JPY: string;
   GBP: string;
   USD: string;
