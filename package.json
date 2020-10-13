@@ -11,10 +11,8 @@
   "dependencies": {
     "@types/sinon": "^9.0.4",
     "axios": "^0.19.1",
-    "camelcase-keys": "^6.2.2",
     "flush-promises": "^1.0.2",
     "sinon": "^9.0.2",
-    "snakecase-keys": "^3.2.0",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.0.0",
@@ -127,22 +125,24 @@
       "prettier/prettier": "off",
       "no-unused-vars": "error",
       "@typescript-eslint/camelcase": "warn",
-      "@typescript-eslint/member-delimiter-style": [
+      "vue/max-attributes-per-line": [
         "error",
         {
+          "singleline": 5,
           "multiline": {
-            "delimiter": "none",
-            "requireLast": false
-          },
-          "singleline": {
-            "delimiter": "comma",
-            "requireLast": false
+            "max": 1,
+            "allowFirstLine": false
           }
         }
       ],
-      "vue/html-self-closing": "off",
-      "vue/singleline-html-element-content-newline": "off",
-      "vue/multiline-html-element-content-newline": "off"
+      "vue/html-closing-bracket-newline": [
+        "warn",
+        {
+          "singleline": "never",
+          "multiline": "always"
+        }
+      ],
+      "vue/html-self-closing": "off"
     }
   },
   "eslintIgnore": [

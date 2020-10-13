@@ -1,18 +1,18 @@
-import axios, { AxiosInstance, AxiosResponse } from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import camelcaseKeys from 'camelcase-keys';
 import snakecaseKeys from 'snakecase-keys';
 
-export interface SuccessResponse<T> extends AxiosResponse {
-  data: {
-    body: T;
-  };
-}
+// export interface SuccessResponse<T> extends AxiosResponse {
+//   data: {
+//     body: T;
+//   };
+// }
 
-export interface FailResponse<T> extends AxiosResponse {
-  response: {
-    data: T;
-  };
-}
+// export interface FailResponse<T> extends AxiosResponse {
+//   response: {
+//     data: T;
+//   };
+// }
 
 export interface FailResponseType {
   code: number;

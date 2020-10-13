@@ -6,9 +6,7 @@
         <api-frame title="API実行" content="ビットコイン価格取得" @getBTC="getBTC" />
       </div>
       <div class="show">
-        <p class="show__text">BTC/USD : {{ getBTCUSD }}</p>
-        <p class="show__text">BTC/GBP : {{ getBTCGBP }}</p>
-        <p class="show__text">BTC/EUR : {{ getBTCEUR }}</p>
+        <p class="show__text">BTC/EUR : {{ fxRates }}</p>
       </div>
     </div>
   </div>
@@ -16,6 +14,8 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+import { getModule } from 'vuex-module-decorators';
+import FxRepository from '@/stores/repositories/FxRepository';
 import ApiFrame from '@organisms/ApiFrame.vue';
 import Heding from '@organisms/Heding.vue';
 
@@ -26,20 +26,15 @@ import Heding from '@organisms/Heding.vue';
 export default class ShowBtcPage extends Vue {
   // getters call
   // stores/gettersを呼ぶ
-  getBTCUSD(): string {
-    return this.$store.getters['stores/getBTCUSD'];
-  }
-  getBTCGBP(): string {
-    return this.$store.getters['stores/getBTCGBP'];
-  }
-  getBTCEUR(): string {
-    return this.$store.getters['stores/getBTCEUR'];
+  get fxRates(): any {
+    return getModule(FxRepository, this.$store).getFxRates;
   }
 
   getBTC(): void {
     // actions dispatch
     // stores/actions.tsのgetBTCを呼ぶ
-    this.$store.dispatch('stores/getBTC');
+    console.log('adfd');
+    getModule(FxRepository, this.$store).fetchFxRates();
   }
 }
 </script>
