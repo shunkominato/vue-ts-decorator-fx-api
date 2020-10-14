@@ -33,7 +33,6 @@ export default class FxRepository extends VuexModule {
       GBP: fxAllRates['gbp'],
       USD: fxAllRates['usd'],
     };
-    console.log(Rates);
     this.context.commit('_setFxRates', Rates);
   }
 
