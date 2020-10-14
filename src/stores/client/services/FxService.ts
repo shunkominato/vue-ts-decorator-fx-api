@@ -26,6 +26,6 @@ export class FxServices {
 
   private static handleError(e: any): any {
     console.log(e);
-    alert('システムエラーが発生しました');
+    throw new Error();
   }
 }

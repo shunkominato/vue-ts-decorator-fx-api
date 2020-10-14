@@ -21,6 +21,7 @@ import { getModule } from 'vuex-module-decorators';
 import FxRepository from '@/stores/repositories/FxRepository';
 import ApiFrame from '@organisms/ApiFrame.vue';
 import Heding from '@organisms/Heding.vue';
+import ErrorPage from './ErrorPage.vue';
 
 @Component({
   name: 'ShowBtcPage',
@@ -42,7 +43,11 @@ export default class ShowBtcPage extends Vue {
   }
 
   getFxRates(): void {
-    getModule(FxRepository, this.$store).fetchFxRates();
+    try {
+      getModule(FxRepository, this.$store).fetchFxRates();
+    } catch {
+      this.$router.push('/ErrorPage');
+    }
   }
 }
 </script>
