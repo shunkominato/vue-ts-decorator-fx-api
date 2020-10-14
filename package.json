@@ -125,6 +125,7 @@
       "prettier/prettier": "off",
       "no-unused-vars": "error",
       "@typescript-eslint/camelcase": "warn",
+      "vue/singleline-html-element-content-newline": "off",
       "vue/max-attributes-per-line": [
         "error",
         {

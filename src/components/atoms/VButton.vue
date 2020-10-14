@@ -1,5 +1,5 @@
 <template>
-  <button :class="`btn btn-${theme}`" @click="$emit('click')" data-testid="test-btn">{{ btnName }}</button>
+  <button :class="`btn btn-${theme}`" data-testid="test-btn" @click="$emit('click')">{{ btnName }}</button>
 </template>
 
 <script lang="ts">

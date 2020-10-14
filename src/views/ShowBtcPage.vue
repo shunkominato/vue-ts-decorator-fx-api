@@ -6,7 +6,9 @@
         <api-frame title="API実行" content="ビットコイン価格取得" @getBTC="getBTC" />
       </div>
       <div class="show">
-        <p class="show__text">BTC/EUR : {{ fxRates }}</p>
+        <p class="show__text">JPY : {{ fxRatesJPY }}</p>
+        <p class="show__text">GBP : {{ fxRatesGBP }}</p>
+        <p class="show__text">USD : {{ fxRatesUSD }}</p>
       </div>
     </div>
   </div>
@@ -26,14 +28,19 @@ import Heding from '@organisms/Heding.vue';
 export default class ShowBtcPage extends Vue {
   // getters call
   // stores/gettersを呼ぶ
-  get fxRates(): any {
-    return getModule(FxRepository, this.$store).getFxRates;
+  get fxRatesJPY(): string {
+    return getModule(FxRepository, this.$store).getFxRatesJPY;
+  }
+
+  get fxRatesGBP(): string {
+    return getModule(FxRepository, this.$store).getFxRatesGBP;
+  }
+
+  get fxRatesUSD(): string {
+    return getModule(FxRepository, this.$store).getFxRatesUSD;
   }
 
   getBTC(): void {
-    // actions dispatch
-    // stores/actions.tsのgetBTCを呼ぶ
-    console.log('adfd');
     getModule(FxRepository, this.$store).fetchFxRates();
   }
 }

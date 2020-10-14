@@ -13,16 +13,22 @@ export default class FxRepository extends VuexModule {
     USD: '0',
   };
 
-  get getFxRates(): FxRates {
-    console.log(this.fxRates);
-    return this.fxRates;
+  get getFxRatesJPY(): string {
+    return this.fxRates.JPY;
+  }
+
+  get getFxRatesGBP(): string {
+    return this.fxRates.GBP;
+  }
+
+  get getFxRatesUSD(): string {
+    return this.fxRates.USD;
   }
 
   @Action
   async fetchFxRates(): Promise<void> {
     const fxAllRates = await FxServices.dispatch('getFxRates');
-    console.log(fxAllRates);
-    const Rates = {
+    const Rates: FxRates = {
       JPY: fxAllRates['jpy'],
       GBP: fxAllRates['gbp'],
       USD: fxAllRates['usd'],
