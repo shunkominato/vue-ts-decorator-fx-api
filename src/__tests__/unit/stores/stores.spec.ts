@@ -1,5 +1,5 @@
 import { createLocalVue } from '@vue/test-utils';
-import Actions from '../../../stores/actions';
+import FxRepository from '@/stores/repositories/FxRepository';
 import Store from '../../../store';
 import axios from 'axios';
 import sinon from 'sinon';
