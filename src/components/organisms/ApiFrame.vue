@@ -5,7 +5,7 @@
         <h5 class="card-header">{{ title }}</h5>
       </frame-header>
 
-      <api-frame-body @getBTC="getBTC">
+      <api-frame-body @getFxRates="getFxRates">
         <div class="card-body">{{ content }}</div>
       </api-frame-body>
 
@@ -27,8 +27,8 @@ export default class ApiFrame extends Vue {
   @Prop({ type: String, required: true }) title: string;
   @Prop({ type: String, required: true }) content: string;
 
-  getBTC(): void {
-    this.$emit('getBTC');
+  getFxRates(): void {
+    this.$emit('getFxRates');
   }
 }
 </script>

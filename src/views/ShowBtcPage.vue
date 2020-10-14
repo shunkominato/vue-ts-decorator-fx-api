@@ -3,7 +3,8 @@
     <heding />
     <div class="container">
       <div class="row">
-        <api-frame title="API実行" content="ビットコイン価格取得" @getBTC="getBTC" />
+        <!-- <api-frame title="API実行" content="ビットコイン価格取得" @getFxRates="getFxRates" /> -->
+        <api-frame title="API実行" content="ビットコイン価格取得" @getFxRates="getFxRates" />
       </div>
       <div class="show">
         <p class="show__text">JPY : {{ fxRatesJPY }}</p>
@@ -40,7 +41,7 @@ export default class ShowBtcPage extends Vue {
     return getModule(FxRepository, this.$store).getFxRatesUSD;
   }
 
-  getBTC(): void {
+  getFxRates(): void {
     getModule(FxRepository, this.$store).fetchFxRates();
   }
 }
