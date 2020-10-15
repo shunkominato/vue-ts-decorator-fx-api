@@ -27,6 +27,7 @@ export default class FxRepository extends VuexModule {
 
   @Action
   async fetchFxRates(): Promise<void> {
+    // stores/client/services/FxService.tsのdispatchを呼ぶ
     const fxAllRates = await FxServices.dispatch('getFxRates');
     const Rates: FxRates = {
       JPY: fxAllRates['jpy'],

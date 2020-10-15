@@ -3,6 +3,7 @@ import { apiClient } from '@/stores/client/ApiClient';
 export type type = 'getFxRates';
 
 export class FxServices {
+  // postなども想定
   static async dispatch(type: type, data?: any, apikey?: string): Promise<any> {
     // postする際にdataとapikeyは必要になる。lintでerrorにしないため、ダミーでdataとapikeyを使用しておく
     console.log(data);
@@ -20,6 +21,7 @@ export class FxServices {
       const result = await apiClient.get(url);
       return result.data.rates;
     } catch (e) {
+      // logをここで出力し、componentまでthrowする
       return this.handleError(e);
     }
   }
