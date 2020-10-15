@@ -1,6 +1,7 @@
 <template>
   <div class="col-max mx-auto">
     <h1>システムエラーが発生しました。</h1>
+    <p>しばらく立ってからやり直してください。</p>
     <v-button class="execute-btn" btn-name="TOPへ" theme="primary" @click="rooter"></v-button>
   </div>
 </template>
