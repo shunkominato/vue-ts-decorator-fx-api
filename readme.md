@@ -16,10 +16,17 @@ decorator を使用し、Vue TypeScript を使用しベストプラクティス�
 
 ---
 
-component を Atomic Design で分割しているが、tmplates と pages は使用していない  
-view フォルダが pages に当たる  
-state などの型定義は stores/entities/Fx.ts で定義  
-Axios 通信を実行するのは/stores/ApiClient.ts の ApiClient を使用する
+- conponent 構成  
+  component を Atomic Design で分割しているが、tmplates と pages は使用していない  
+  view フォルダが pages に当たる  
+  state などの型定義は stores/entities/Fx.ts で定義  
+  Axios 通信を実行するのは/stores/ApiClient.ts の ApiClient を使用する
+
+- vuex 構成  
+  stores を service、client、entities、repositories でフォルダを分割
+  client : Api 実行  
+  entities : state の型定義  
+  repositories :state を管理、操作
 
 - vuex の流れ  
   1.components or views で repositories の Actions を呼ぶ  
