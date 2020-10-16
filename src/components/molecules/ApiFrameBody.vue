@@ -1,7 +1,7 @@
 <template>
   <div>
     <slot></slot>
-    <v-button class="execute-btn" btn-name="実行" theme="primary" @click="getBTC"></v-button>
+    <v-button class="execute-btn" btn-name="実行" theme="primary" @click="getFxRates"></v-button>
   </div>
 </template>
 
@@ -14,8 +14,8 @@ import { Vue, Component } from 'vue-property-decorator';
   components: { VButton },
 })
 export default class ApiFrameBody extends Vue {
-  getBTC(): void {
-    this.$emit('getBTC');
+  getFxRates(): void {
+    this.$emit('getFxRates');
   }
 }
 </script>

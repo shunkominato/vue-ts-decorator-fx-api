@@ -10,17 +10,15 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
 import MenuFrame from '@organisms/MenuFrame.vue';
 import Heding from '@organisms/Heding.vue';
 
-export default Vue.extend({
+@Component({
   name: 'MenuPage',
-  components: {
-    Heding,
-    MenuFrame,
-  },
-});
+  components: { MenuFrame, Heding },
+})
+export default class MenuPage extends Vue {}
 </script>
 
 <style scoped>

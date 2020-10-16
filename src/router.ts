@@ -4,12 +4,13 @@ import { PositionResult } from 'vue-router/types/router';
 
 import MenuPage from './views/MenuPage.vue';
 import ShowBtcPage from './views/ShowBtcPage.vue';
-
+import ErrorPage from './views/ErrorPage.vue';
 Vue.use(Router);
 
 const routes: RouteConfig[] = [
   { path: '/', component: MenuPage },
   { path: '/ShowBtcPage', component: ShowBtcPage },
+  { path: '/ErrorPage', component: ErrorPage },
   { path: '*', redirect: '/' },
 ];
 

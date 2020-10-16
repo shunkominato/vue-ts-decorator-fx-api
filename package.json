@@ -125,22 +125,25 @@
       "prettier/prettier": "off",
       "no-unused-vars": "error",
       "@typescript-eslint/camelcase": "warn",
-      "@typescript-eslint/member-delimiter-style": [
+      "vue/singleline-html-element-content-newline": "off",
+      "vue/max-attributes-per-line": [
         "error",
         {
+          "singleline": 5,
           "multiline": {
-            "delimiter": "none",
-            "requireLast": false
-          },
-          "singleline": {
-            "delimiter": "comma",
-            "requireLast": false
+            "max": 1,
+            "allowFirstLine": false
           }
         }
       ],
-      "vue/html-self-closing": "off",
-      "vue/singleline-html-element-content-newline": "off",
-      "vue/multiline-html-element-content-newline": "off"
+      "vue/html-closing-bracket-newline": [
+        "warn",
+        {
+          "singleline": "never",
+          "multiline": "always"
+        }
+      ],
+      "vue/html-self-closing": "off"
     }
   },
   "eslintIgnore": [
