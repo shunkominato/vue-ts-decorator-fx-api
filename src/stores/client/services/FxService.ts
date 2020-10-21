@@ -28,16 +28,7 @@ export class FxServices {
 
   private static handleError(e: any): any {
     console.log(e);
-    // エラーログを残すためのAPI実行
-    // const { exception, code } = e.response.data;
-    // const url = hogehoge
-    // const data = {
-    //   code,
-    //   exception,
-    //   level: 'error'
-    //   src: 'FxService.ts'
-    // }
-    // await apiClient.post(url, data, apikey);
-    throw new Error();
+
+    throw new Error(e);
   }
 }
