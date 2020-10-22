@@ -28,6 +28,7 @@ export class FxServices {
 
   private static handleError(e: any): any {
     console.log(e);
-    throw new Error();
+
+    throw new Error(e);
   }
 }
